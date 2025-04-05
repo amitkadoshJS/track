@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "description": "Simplified track for testing",
+  "indices": [
+    {
+      "name": "test_track",
+      "body": "index.json"
+    }
+  ],
+  "corpora": [
+    {
+      "name": "test_track",
+"base-url": "https://github.com/amitkadoshJS/track/blob/main/",
+      "documents": [
+        {
+          "source-file": "small_dataset.json.bz2",
+          "document-count": 8,
+          "compressed-bytes": 196
+        }
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "name": "index-append",
+      "operation-type": "bulk",
+      "bulk-size": 1
+    }
+  ],
+  "challenges": [
+    {
+      "name": "test-bulk",
+      "default": true,
+      "schedule": [
+        {
+          "operation": "index-append",
+          "clients": 1
+        }
+      ]
+    }
+  ]
+}
